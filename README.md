@@ -10,7 +10,13 @@ Setting up your development environment with Ansible
 `` $ ansible-playbook -K playbook.yml -i inventory/hosts.yml  ``
 
 ## Roles
-- common ubuntu packages
+- common ubuntu packages:
+ - jq
+ - vim
+ - htop
+ - curl
+ - wget
+ - cifs-utils
 - Atom
 - GIT
 - TeamViewer
