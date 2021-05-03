@@ -3,10 +3,23 @@
 Setting up your development environment with Ansible
 
 ## Requirements
-- fresh installed Ubuntu
+- fresh installed Ubuntu (out of scope)
 - ansible >= 2.10.5
 
-## Install
+### Install Ansible
+
+[Ansible Documentation](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-ubuntu)
+
+```
+
+$ sudo apt update
+$ sudo apt install software-properties-common
+$ sudo apt-add-repository --yes --update ppa:ansible/ansible
+$ sudo apt install ansible
+
+```
+
+## Ansible-Playbook
 `` $ ansible-playbook -K playbook.yml -i inventory/hosts.yml  ``
 
 ## Roles
