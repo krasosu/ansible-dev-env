@@ -1,0 +1,7 @@
+---
+# vars file for docker and docker-compose
+
+compose_version: "1.29.1" 
+compose_path: /usr/local/bin/docker-compose
+
+
