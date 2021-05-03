@@ -11,12 +11,12 @@ Setting up your development environment with Ansible
 
 ## Roles
 - common ubuntu packages:
- - jq
- - vim
- - htop
- - curl
- - wget
- - cifs-utils
+   - jq
+   - vim
+   - htop
+   - curl
+   - wget
+   - cifs-utils
 - Atom
 - GIT
 - TeamViewer
