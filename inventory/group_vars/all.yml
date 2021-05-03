@@ -13,7 +13,7 @@ git_user_email: krasosu@krasosu.de
 git_repository_destination: /home/omega/workspace
 
 git_repositories:
-#  - repo: ssh://git@github.com/robertdebock/ansible-role-aide.git
-#    dest: ansible-role-aide
+#  - repo: git@github.com:krasosu/ansible-dev-env.git
+#    dest: ansible-dev-env
 
     
