@@ -1,0 +1,10 @@
+---
+- name: Setting up development environment
+  hosts: local
+  become: yes
+
+  roles:
+    - common-apt
+    - git
+    - atom
+    - teamviewer

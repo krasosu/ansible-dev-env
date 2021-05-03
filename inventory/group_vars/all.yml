@@ -1,0 +1,19 @@
+
+
+
+
+system_user_name: omega
+system_user_group: omega
+
+
+
+
+git_user_name: krasosu
+git_user_email: krasosu@krasosu.de
+git_repository_destination: /home/omega/workspace
+
+git_repositories:
+#  - repo: ssh://git@github.com/robertdebock/ansible-role-aide.git
+#    dest: ansible-role-aide
+
+    

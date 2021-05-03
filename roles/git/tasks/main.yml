@@ -1,0 +1,33 @@
+- name: "Install git, gitk, meld packages"
+  apt:
+    name: "{{ packages }}"
+    state: present
+    update_cache: yes
+    cache_valid_time: 604800
+  vars:
+    packages:
+    - git
+    - gitk
+    - meld
+  
+- name: place git configuration
+  ansible.builtin.template:
+    src: gitconfig.j2
+    dest: /home/{{ system_user_name }}/.gitconfig
+    mode: "0644"
+  when:
+    - git_user_email is defined
+    - git_user_name is defined
+    - system_username is defined
+    
+- name: create repository_destination
+  ansible.builtin.file:
+    path: "{{ git_repository_destination }}"
+    state: directory
+    owner: "{{ system_user_name | default(omit) }}"
+    group: "{{ system_user_group | default(omit) }}"
+    mode: "0750"
+  when:
+    - system_user_name is defined
+    - git_repository_destination is defined
+

@@ -1,0 +1,13 @@
+---
+# vars file for teamviewer
+
+
+_teamviewer_package:
+  apt:
+    url: 'https://download.teamviewer.com/download/linux/teamviewer_amd64.deb'
+    name: teamviewer_amd64.deb
+
+teamviewer_package_url: '{{ _teamviewer_package[ansible_pkg_mgr]["url"] }}'
+teamviewer_package: "{{ _teamviewer_package[ansible_pkg_mgr]['name'] }}"
+
+
