@@ -4,10 +4,10 @@
   become: yes
 
   roles:
-    - common-apt
-    - git
-    - atom
+    #- common-apt
+    #- git
+    #- atom
     - teamviewer
-    - java
-    - docker
-    - maven
+    #- java
+    #- docker
+    #- maven

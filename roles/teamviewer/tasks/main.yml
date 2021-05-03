@@ -1,13 +1,23 @@
 ---
 # tasks file for teamviewer
 
-- name: Download teamviewer.deb
-  ansible.builtin.get_url:
-    url: "{{ teamviewer_package_url }}"
-    dest: "/tmp/{{ teamviewer_package }}"
-    validate_certs: no
+- name: Check If TeamViewer is already installed or not
+  shell: "teamviewer --version | awk '{print $4}' | tr '\n' ' '"
+  register: teamviewer_installed
 
-- name: Install teamviewer.deb
-  ansible.builtin.apt:
-    deb: "/tmp/{{ teamviewer_package }}"
-    state: present
+- name: Installed TeamViewer Version
+  debug: "msg={{teamviewer_installed.stdout}}"
+
+- name: Download and Install TeamViewer.debug
+  block:
+    - name: Download teamviewer.deb
+      ansible.builtin.get_url:
+        url: "{{ teamviewer_package_url }}"
+        dest: "/tmp/{{ teamviewer_package }}"
+        validate_certs: no
+
+    - name: Install teamviewer.deb
+      ansible.builtin.apt:
+        deb: "/tmp/{{ teamviewer_package }}"
+        state: present
+  when: teamviewer_installed.stdout == ""
