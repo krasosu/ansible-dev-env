@@ -1,0 +1,5 @@
+---
+#Maven vars
+maven_major: 3
+maven_version: 3.8.1
+maven_home_parent_directory: /opt

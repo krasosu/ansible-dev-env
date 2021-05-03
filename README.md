@@ -17,6 +17,10 @@ Setting up your development environment with Ansible
    - curl
    - wget
    - cifs-utils
+- OpenJDK 16
+- Maven 3.8.1
+- Docker
+- Docker Compose
 - Atom
 - GIT
 - TeamViewer
