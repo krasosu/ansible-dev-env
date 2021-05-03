@@ -9,8 +9,8 @@
     - git
     - gitk
     - meld
-  
-- name: place git configuration
+
+- name: Place git configuration
   ansible.builtin.template:
     src: gitconfig.j2
     dest: /home/{{ system_user_name }}/.gitconfig
@@ -19,8 +19,8 @@
     - git_user_email is defined
     - git_user_name is defined
     - system_username is defined
-    
-- name: create repository_destination
+
+- name: Create repository directory
   ansible.builtin.file:
     path: "{{ git_repository_destination }}"
     state: directory
@@ -30,4 +30,3 @@
   when:
     - system_user_name is defined
     - git_repository_destination is defined
-

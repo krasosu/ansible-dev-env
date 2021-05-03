@@ -1,7 +1,7 @@
 ---
 # tasks file for atom
 
-- name: install requirements
+- name: Install requirements
   ansible.builtin.package:
     name: "{{ atom_requirements }}"
     state: present
@@ -9,14 +9,13 @@
     - atom_requirements is defined
 
 
-- name: download atom
+- name: Download atom.deb
   ansible.builtin.get_url:
     url: "{{ atom_package_url }}"
     dest: "/tmp/{{ atom_package }}"
     validate_certs: no
 
-- name: install atom deb
+- name: Install atom.deb
   ansible.builtin.apt:
     deb: "/tmp/{{ atom_package }}"
     state: present
-

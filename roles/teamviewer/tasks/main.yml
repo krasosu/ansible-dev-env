@@ -1,14 +1,13 @@
 ---
 # tasks file for teamviewer
 
-- name: download teamviewer
+- name: Download teamviewer.deb
   ansible.builtin.get_url:
     url: "{{ teamviewer_package_url }}"
     dest: "/tmp/{{ teamviewer_package }}"
     validate_certs: no
 
-- name: install teamviewer deb
+- name: Install teamviewer.deb
   ansible.builtin.apt:
     deb: "/tmp/{{ teamviewer_package }}"
     state: present
-
