@@ -1,0 +1,15 @@
+---
+# Ansible role to install gnome tweaks
+- name: "Install gnome-tweaks packages"
+  apt:
+    name: "{{ packages }}"
+    state: present
+    update_cache: yes
+    cache_valid_time: 604800
+  vars:
+    packages:
+    - gnome-tweak
+    - gnome-tweak-tool
+    - dconf-editor
+
+# TODO: Dash-To-Dock

@@ -1,6 +1,5 @@
 ---
-# tasks file for atom
-
+# Ansible role to download, install atom
 - name: Install requirements
   ansible.builtin.package:
     name: "{{ atom_requirements }}"

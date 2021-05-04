@@ -1,3 +1,5 @@
+---
+# Ansible role to install, config docker and docker-compose
   - name: Ensure built-in docker is removed
     apt:
       pkg:

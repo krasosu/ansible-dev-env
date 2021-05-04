@@ -1,6 +1,5 @@
 ---
 # Ansible role to install apache maven 3
-
   - name: Check If maven is already installed or not
     shell: "mvn -version | grep -w 'Apache Maven' | awk '{print $3}'"
     register: maven_installed
@@ -9,6 +8,7 @@
     debug: "msg={{maven_installed.stdout}}"
 
   - block:
+    when: maven_installed.stdout == ""
     - name: Download and Unarchive maven
       unarchive:
         src: "http://www.apache.org/dist/maven/maven-{{ maven_major }}/{{ maven_version }}/binaries/apache-maven-{{ maven_version }}-bin.tar.gz"
@@ -33,6 +33,4 @@
    
    # - name: Exports/Run maven env file for make M2_HOME available globally
    #   shell: "source {{maven_env_file}}"
-
-    when: maven_installed.stdout == ""
 

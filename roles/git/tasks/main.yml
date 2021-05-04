@@ -1,3 +1,5 @@
+---
+# Ansible role to install, config git
 - name: "Install git, gitk, meld packages"
   apt:
     name: "{{ packages }}"

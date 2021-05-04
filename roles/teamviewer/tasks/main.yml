@@ -1,6 +1,5 @@
 ---
-# tasks file for teamviewer
-
+# Ansible role to download, install  teamviewer
 - name: Check If TeamViewer is already installed or not
   shell: "teamviewer --version | awk '{print $4}' | tr '\n' ' '"
   register: teamviewer_installed
@@ -8,7 +7,7 @@
 - name: Installed TeamViewer Version
   debug: "msg={{teamviewer_installed.stdout}}"
 
-- name: Download and Install TeamViewer.debug
+- name: Download and Install TeamViewer
   block:
     - name: Download teamviewer.deb
       ansible.builtin.get_url:
@@ -21,3 +20,11 @@
         deb: "/tmp/{{ teamviewer_package }}"
         state: present
   when: teamviewer_installed.stdout == ""
+
+nice!!! siehst du was?
+
+
+  jo
+
+  coole sache
+war das alles?

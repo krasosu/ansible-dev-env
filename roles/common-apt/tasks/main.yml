@@ -1,4 +1,5 @@
 ---
+# Ansible role to install basic ubuntu packages
 - name: "Install base packages"
   apt:
     name: "{{ packages }}"
