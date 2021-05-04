@@ -14,5 +14,6 @@
     - curl
     - wget
     - cifs-utils
+    - nfs-common
   
 
