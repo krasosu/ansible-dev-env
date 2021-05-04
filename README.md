@@ -3,6 +3,7 @@
 Setting up your development environment with Ansible
 
 ## Requirements
+
 - fresh installed Ubuntu (out of scope)
 - ansible >= 2.10.5
 
@@ -20,16 +21,18 @@ $ sudo apt install ansible
 ```
 
 ## Ansible-Playbook
+
 `` $ ansible-playbook -K playbook.yml -i inventory/hosts.yml  ``
 
 ## Roles
+
 - common ubuntu packages:
-   - jq
-   - vim
-   - htop
-   - curl
-   - wget
-   - cifs-utils
+    - jq
+    - vim
+    - htop
+    - curl
+    - wget
+    - cifs-utils
 - OpenJDK 16
 - Maven 3.8.1
 - Docker

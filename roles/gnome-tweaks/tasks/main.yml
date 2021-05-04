@@ -8,7 +8,7 @@
     cache_valid_time: 604800
   vars:
     packages:
-    - gnome-tweak
+    - gnome-tweaks
     - gnome-tweak-tool
     - dconf-editor
 

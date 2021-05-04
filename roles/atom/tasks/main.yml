@@ -1,20 +1,28 @@
 ---
-# Ansible role to download, install atom
-- name: Install requirements
-  ansible.builtin.package:
-    name: "{{ atom_requirements }}"
+# Ansible role to install atom
+- name: Install dependencies
+  become: yes
+  apt:
+    name:
+      - apt-transport-https
+      - gnupg2
     state: present
-  when:
-    - atom_requirements is defined
 
+- name: Install apt key
+  become: yes
+  apt_key:
+    url: 'https://packagecloud.io/AtomEditor/atom/gpgkey'
+    state: present
 
-- name: Download atom.deb
-  ansible.builtin.get_url:
-    url: "{{ atom_package_url }}"
-    dest: "/tmp/{{ atom_package }}"
-    validate_certs: no
+- name: Install atom repo
+  become: yes
+  apt_repository:
+    repo: deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main
+    filename: atom
+    state: present
 
-- name: Install atom.deb
-  ansible.builtin.apt:
-    deb: "/tmp/{{ atom_package }}"
+- name: Install atom
+  become: yes
+  apt:
+    name: atom
     state: present
